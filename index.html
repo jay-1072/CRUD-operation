@@ -20,40 +20,64 @@
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
         </script>
 
+    <!-- my style  -->
+    <link rel="stylesheet" href="css/style.css">
+
     <!-- my script -->
     <script defer src="js/script.js"></script>
 </head>
 
 <body>
 
+<!-- main div started -->
     <div class="main">
+
+    <!-- Add new employee button started -->
+        <div class="new-emp-btn">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn my-4 btn-light new-emp" data-bs-toggle="modal" data-bs-target="">
+                            New Employee &nbsp;<i class="fa-solid fa-user"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+    <!-- Add new employee button started -->
+
+    <!-- container for table -->
         <div class="container">
-        <table class="table">
-            <thead class="table-dark">
-              <tr>
-                <th scope="col">ID</th>
-                <th scope="col">First Name</th>
-                <th scope="col">Middle Name</th>
-                <th scope="col">Last Name</th>
-                <th scope="col">Email ID</th>
-                <th scope="col">Gender</th>
-                <th scope="col">Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>abc</td>
-                <td>abc</td>
-                <td>abc</td>
-                <td>abc</td>
-                <td>abc</td>
-                <td>abc</td>
-              </tr>
-            </tbody>
-          </table>
+            <!-- table started -->
+            <table class="table">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Middle Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Email ID</th>
+                        <th scope="col">Gender</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>abc</td>
+                        <td>abc</td>
+                        <td>abc</td>
+                        <td>abc</td>
+                        <td>abc</td>
+                        <td>abc</td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- table ended -->
         </div>
+        
     </div>
+<!-- main div ended -->
 
 </body>
 
