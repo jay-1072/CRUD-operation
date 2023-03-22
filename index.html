@@ -38,13 +38,86 @@
                 <div class="row">
                     <div class="col">
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn my-4 btn-light new-emp" data-bs-toggle="modal" data-bs-target="">
+                        <button type="button" class="btn my-4 btn-light new-emp" data-bs-toggle="modal" data-bs-target="#newEmpModal">
                             New Employee &nbsp;<i class="fa-solid fa-user"></i>
                         </button>
                     </div>
                 </div>
             </div>
     <!-- Add new employee button started -->
+
+    <!-- Modal for new employee started -->
+
+    <div class="modal fade" id="newEmpModal" tabindex="-1" aria-hidden="true" aria-labelledby="newEmpModalLabel">
+        <!-- modal dialog -->
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- modal header -->
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="newEmpModalLabel" style="padding-left: 170px;">Add New Employee</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <!-- modal body -->
+                <div class="modal-body">
+                    <!-- for Id -->
+                    <div class="form-floating mb-3">
+                        <input type="number" class="form-control shadow-none emp-id" id="empId" name="empId"
+                            required>
+                        <label for="empId">Employee Id</label>
+                    </div>
+                    <!-- for First Name -->
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control shadow-none emp-fname" id="empFname" name="empFname"
+                            required>
+                        <label for="empFname">First Name</label>
+                    </div>
+                    <!-- For Middle Name -->
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control shadow-none emp-mname" id="empMname" name="empMname"
+                            required>
+                        <label for="empMname">Middle Name</label>
+                    </div>
+                    <!-- For Last Name -->
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control shadow-none emp-lname" id="empLname" name="empLname"
+                            required>
+                        <label for="empLname">Last Name</label>
+                    </div>
+                    <!-- For Email -->
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control shadow-none emp-email" id="empEmail" name="empEmail"
+                            required>
+                        <label for="empEmail">Email</label>
+                    </div>
+                    <!-- For Gender -->
+                    <div class="d-flex">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" value="Male" name="eGender" id="maleEmp" required>
+                            <label class="form-check-label" for="maleEmp">
+                            Male
+                            </label>
+                        </div>
+                        <div class="form-check ms-4">
+                            <input class="form-check-input" type="radio" value="Female" name="eGender" id="femaleEmp" required>
+                            <label class="form-check-label" for="femaleEmp">
+                            Female
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="addEmployee()">Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal for new employee ended -->
 
     <!-- container for table -->
         <div class="container">
@@ -75,7 +148,7 @@
             </table>
             <!-- table ended -->
         </div>
-        
+
     </div>
 <!-- main div ended -->
 
