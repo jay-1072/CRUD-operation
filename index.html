@@ -84,7 +84,7 @@
                 <!-- modal header -->
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="newEmpModalLabel" style="padding-left: 170px;">Add New Employee</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="resetModal()"></button>
                 </div>
 
                 <!-- modal body -->
@@ -94,59 +94,80 @@
                         <input type="number" class="form-control shadow-none emp-id" id="empId" name="empId"
                             required>
                         <label for="empId">Employee Id</label>
+                        <strong id="empIdError" class="text-danger font-wight-bold"></strong>
                     </div>
                     <!-- for First Name -->
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control shadow-none emp-fname" id="empFname" name="empFname" onblur="checkFname(this)"
+                        <input type="text" class="form-control shadow-none emp-fname" id="empFname" name="empFname" onfocus=""
                             required>
                         <label for="empFname">First Name</label>
+                        <strong id="empFnameError" class="text-danger font-wight-bold"></strong>
                     </div>
                     <!-- For Middle Name -->
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control shadow-none emp-mname" id="empMname" name="empMname"  onblur="checkMname(this)"
+                        <input type="text" class="form-control shadow-none emp-mname" id="empMname" name="empMname"
                             required>
                         <label for="empMname">Middle Name</label>
+                        <strong id="empMnameError" class="text-danger font-wight-bold"></strong>
                     </div>
                     <!-- For Last Name -->
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control shadow-none emp-lname" id="empLname" name="empLname" onblur="checkLname(this)"
+                        <input type="text" class="form-control shadow-none emp-lname" id="empLname" name="empLname"
                             required>
                         <label for="empLname">Last Name</label>
+                        <strong id="empLnameError" class="text-danger font-wight-bold"></strong>
                     </div>
                     <!-- For Email -->
                     <div class="form-floating mb-3">
                         <input type="email" class="form-control shadow-none emp-email" id="empEmail" name="empEmail"
                             required>
                         <label for="empEmail">Email</label>
+                        <strong id="empEmailError" class="text-danger font-wight-bold"></strong>
                     </div>
                     <!-- For Gender -->
                     <div class="d-flex">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" value="Male" name="eGender" id="maleEmp" required>
+                            <input class="form-check-input" type="radio" value="Male" name="eGender" id="maleEmp">
                             <label class="form-check-label" for="maleEmp">
                             Male
                             </label>
                         </div>
                         <div class="form-check ms-4">
-                            <input class="form-check-input" type="radio" value="Female" name="eGender" id="femaleEmp" required>
+                            <input class="form-check-input" type="radio" value="Female" name="eGender" id="femaleEmp">
                             <label class="form-check-label" for="femaleEmp">
                             Female
                             </label>
                         </div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <strong id="empGenderError" class="text-danger font-wight-bold"></strong>
+                
                     </div>
                 </div>
 
                 <!-- modal footer -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" onclick="addEmployee()">Add</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="resetModal()">Close</button>
+                    <input type="submit" value="Add" class="btn btn-primary" id="liveToastBtn" onclick="addEmployee()">
                 </div>
             </div>
         </div>
     </div>
 
-
     <!-- Modal for new employee ended -->
+
+
+    <!-- Toast message on form submit -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <h6>Toast Message</h6>
+                <button type="button" class="btn btn-close" data-bs-dismiss="toast" aria-label="Close" style="margin-left: 170px;"></button>
+            </div>
+            <div class="toast-body">
+                Employee added successfully.
+            </div>
+        </div>
+    </div>
 
     <!-- container for table -->
         <div class="container">
